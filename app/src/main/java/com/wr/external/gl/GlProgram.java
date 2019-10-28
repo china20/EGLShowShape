@@ -1,6 +1,8 @@
 package com.wr.external.gl;
 
 import android.opengl.GLES20;
+import android.util.Log;
+
 import java.nio.FloatBuffer;
 
 /**
@@ -29,6 +31,7 @@ public final class GlProgram {
         mProgram = WrGlUtil.linkProgram(mVertexShader, mFragmentShader);
 
         if (mProgram <= 0) {
+            Log.e(TAG, "link program error:");
             release();
         }
 
